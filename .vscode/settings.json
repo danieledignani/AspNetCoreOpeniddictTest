@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "configuration",
-        "Analysis - Registration - Mail confirm"
+        "Analysis - Registration - Mail confirm",
+        "Analysis - User Custom Fields"
     ]
 }

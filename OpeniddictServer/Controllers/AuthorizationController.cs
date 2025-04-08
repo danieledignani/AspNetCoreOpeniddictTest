@@ -106,6 +106,20 @@ public class AuthorizationController : Controller
         var user = await _userManager.GetUserAsync(result.Principal) ??
             throw new InvalidOperationException("The user details cannot be retrieved.");
 
+        // TODO: Analysis - Mail Confirmation after Registration (User Enable only after mail confirm)
+        #region Mail Confirm request
+        if (!await _userManager.IsEmailConfirmedAsync(user))
+        {
+            return Forbid(
+                authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
+                properties: new AuthenticationProperties(new Dictionary<string, string>
+                {
+                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = Errors.InvalidRequest,
+                    [OpenIddictServerAspNetCoreConstants.Properties.ErrorDescription] = "Email not confirmed. Please confirm your email before proceeding."
+                }));
+        }
+        #endregion
+
         // Retrieve the application details from the database.
         var application = await _applicationManager.FindByClientIdAsync(request.ClientId) ??
             throw new InvalidOperationException("Details concerning the calling client application cannot be found.");

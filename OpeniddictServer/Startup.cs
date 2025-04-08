@@ -38,7 +38,10 @@ public class Startup
 
         services.AddDatabaseDeveloperPageExceptionFilter();
 
-        services.AddIdentity<ApplicationUser, IdentityRole>()
+        // TODO: Analysis - Mail Confirmation after Registration (added options inside Service.AddIdentity)
+        services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+            options.SignIn.RequireConfirmedEmail = true;
+        })
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders()
           .AddDefaultUI()
@@ -140,6 +143,7 @@ public class Startup
             })
             .AddServer(options =>
             {
+                options.DisableAccessTokenEncryption(); // TODO: Analysis - With this option is possible to Read token
                 // Enable the authorization, logout, token and userinfo endpoints.
                 options.SetAuthorizationEndpointUris("connect/authorize")
                    //.SetDeviceEndpointUris("connect/device")

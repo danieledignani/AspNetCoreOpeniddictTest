@@ -36,7 +36,7 @@ namespace OpeniddictServer
                         DisplayName = "angular client PKCE",
                         DisplayNames =
                         {
-                            [CultureInfo.GetCultureInfo("fr-FR")] = "Application cliente MVC"
+                            [CultureInfo.GetCultureInfo("it-IT")] = "Application cliente MVC"
                         },
                         PostLogoutRedirectUris =
                         {
@@ -111,7 +111,7 @@ namespace OpeniddictServer
                         DisplayName = "Blazor code PKCE",
                         DisplayNames =
                         {
-                            [CultureInfo.GetCultureInfo("fr-FR")] = "Application cliente MVC"
+                            [CultureInfo.GetCultureInfo("it-IT")] = "Client Application MVC"
                         },
                         PostLogoutRedirectUris =
                         {
@@ -157,7 +157,7 @@ namespace OpeniddictServer
                         DisplayName = "dataEventRecords API access",
                         DisplayNames =
                         {
-                            [CultureInfo.GetCultureInfo("fr-FR")] = "Accès à l'API de démo"
+                            [CultureInfo.GetCultureInfo("it-IT")] = "Accesso alle API di Demo"
                         },
                         Name = "dataEventRecords",
                         Resources =

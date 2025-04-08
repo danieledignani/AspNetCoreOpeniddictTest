@@ -31,3 +31,4 @@ AspNetCoreResourceServer/bin
 /oidc-server.txt
 /OpeniddictServer/OpeniddictServer.csproj.user
 /AspNetCoreOpeniddict.slnLaunch.user
+/OpeniddictServer/appsettings.Local.json

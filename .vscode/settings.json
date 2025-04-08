@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "configuration",
         "Analysis - Registration - Mail confirm",
-        "Analysis - User Custom Fields"
+        "Analysis - User Custom Fields",
+        "Analysis - Token Expiration"
     ]
 }

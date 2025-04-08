@@ -145,6 +145,9 @@ public class Startup
             .AddServer(options =>
             {
                 options.DisableAccessTokenEncryption(); // TODO: Analysis - With this option is possible to Read token
+
+                options.SetAccessTokenLifetime(TimeSpan.FromMinutes(60)); // TODO: Analysis - With this option is possible to Set Expiration Token
+
                 // Enable the authorization, logout, token and userinfo endpoints.
                 options.SetAuthorizationEndpointUris("connect/authorize")
                    //.SetDeviceEndpointUris("connect/device")

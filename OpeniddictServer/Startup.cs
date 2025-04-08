@@ -138,6 +138,7 @@ public class Startup
             {
                 options.UseEntityFrameworkCore()
                        .UseDbContext<ApplicationDbContext>();
+                       //.ReplaceDefaultEntities<RaffaelloIdentityApplication, RaffaelloIdentityAuthorization, RaffaelloIdentityScope, RaffaelloIdentityToken, long>();
 
                 options.UseQuartz();
             })
